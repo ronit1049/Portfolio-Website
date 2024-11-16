@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin-bottom: 3px;
+}
+
+/* ---- Global Variables ---- */
+:root {
+    --primary-color: #1c1c22;
+    --secondary-color: #16e495;
+    --secondary-color2: #26262e;
+    --shadow-effect: 0px 0px 1px black;
+    --section-heading: underline solid 0.2rem;
+    --box-shadow-effect: 0.3s ease;
+    --text-shadow-effect: 0px 0px 4px var(--secondary-color);
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "JetBrains Mono", monospace;
+    background-color: var(--primary-color);
+    color: whitesmoke;
+}
+
+/* ---- navbar css ---- */
+nav {
+    display: flex;
+    height: 10vh;
+    background-color: var(--primary-color);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 1rem;
+    z-index: 10;
+    box-shadow: var(--shadow-effect);
+}
+
+.left-nav {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.left-nav>.dot {
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 4px var(--secondary-color);
+}
+
+.right-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right-nav ul li {
+    margin: 0px 0.6rem;
+    list-style: none;
+}
+
+.right-nav ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    transition: color 0.3s, text-decoration 0.3s;
+    text-shadow: var(--text-shadow-effect);
+    position: relative;
+}
+
+.right-nav ul li a:hover {
+    color: var(--secondary-color);
+    /* text-decoration: underline 1px solid; */
+}
+
+.right-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.right-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: whitesmoke;
+    margin: 4px;
+}
+
+/* ---- Home Section CSS ---- */
+.home-flex {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.home-data h1 {
+    font-size: 3rem;
+}
+
+.home-image img {
+    height: 17rem;
+    box-shadow: 0px 0px 3px 3px var(--secondary-color);
+    border-radius: 30%;
+    cursor: pointer;
+    transition: var(--box-shadow-effect);
+}
+
+.home-image img:hover {
+    box-shadow: 0px 0px 15px 7px var(--secondary-color);
+}
+
+.profession p {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.home-data h1 span {
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 8px var(--secondary-color);
+}
+
+.home-data>p {
+    font-size: small;
+}
+
+.home-data {
+    margin-right: 2.2rem;
+    max-width: 100%;
+}
+
+.connect {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 13px;
+}
+
+.connect a img {
+    height: 35px;
+    filter: drop-shadow(0 0 5px #16e495);
+}
+
+
+/* ---- About section CSS ---- */
+.about-heading h1 {
+    color: var(--secondary-color);
+    text-decoration: var(--section-heading);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 12vh 5vw 0;
+    row-gap: 3rem;
+    max-width: 100%;
+}
+
+.about-card img {
+    height: 15rem;
+    width: auto;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-effect);
+}
+
+.about-card p {
+    max-width: 30vw;
+    font-size: 0.9rem;
+    padding: 2rem 0px;
+    text-align: justify;
+}
+
+.about-heading {
+    grid-column: 1/-1;
+}
+
+
+/* ---- skills section CSS ---- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 0.7rem;
+    padding: 12vh 5vw 0;
+    max-width: 100%;
+}
+
+.skills-heading {
+    grid-column: 1/3;
+    color: var(--secondary-color);
+    text-decoration: var(--section-heading);
+}
+
+.skills-description {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.skills-showcase {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.4rem;
+}
+
+.skills-images img {
+    height: 14rem;
+    width: 25vw;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-effect);
+}
+
+.skill-image1 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.skill-image2 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.skills-description p {
+    text-align: justify;
+}
+
+.skills-description>h2 {
+    text-shadow: var(--text-shadow-effect);
+}
+
+.skills-data {
+    background-color: var(--primary-color);
+    width: 50vw;
+    height: 7vh;
+    box-shadow: 1px 1px 2px 1px black;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.skills-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.skills-icon img {
+    width: 24px;
+    margin: 0px 5px;
+}
+
+.skills-label {
+    flex: 1;
+}
+
+.skills-percentage {
+    margin-right: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: #3f3f4d;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.progress1,
+.progress2,
+.progress3,
+.progress4 {
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.progress1 {
+    width: 95%;
+}
+
+.progress2 {
+    width: 61%;
+}
+
+.progress3 {
+    width: 49%;
+}
+
+.progress4 {
+    width: 13%;
+}
+
+
+/* ---- Project section CSS ---- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding-top: 12vh;
+}
+
+.projects-heading {
+    grid-column: 1/4;
+}
+
+.projects-heading h1 {
+    color: var(--secondary-color);
+    text-decoration: var(--section-heading);
+}
+
+.projects-container {
+    grid-column: 1/4;
+    display: grid;
+    background-color: var(--primary-color);
+    height: 70vh;
+    width: 90vw;
+    margin: 2rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.project-card {
+    height: 90%;
+    width: 22vw;
+    overflow: hidden;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, var(--box-shadow-effect);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-card1 {
+    background-image: url("./images/project-pic1.jfif");
+    vertical-align: middle;
+}
+
+.project-card2 {
+    background-image: url("./images/project-pic2.webp");
+}
+
+.project-card3 {
+    background-image: url("./images/project-pic3.jfif");
+}
+
+.project-card1,
+.project-card2,
+.project-card3 {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.project-card h3 {
+    color: whitesmoke;
+    font-weight: 700;
+    text-shadow: var(--text-shadow-effect);
+}
+
+.project-card1 p {
+    color: whitesmoke;
+    padding-left: 1rem;
+}
+
+.project-card2 p {
+    color: burlywood;
+    padding-left: 1rem;
+}
+
+.project-card3 p {
+    padding-left: 1rem;
+}
+
+
+/* ---- contact form CSS ---- */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 2rem;
+    padding-top: 11vh;
+    margin-bottom: 2px;
+}
+
+.contact-form>h1 {
+    color: var(--secondary-color);
+    text-decoration: var(--section-heading);
+}
+
+form {
+    height: 70vh;
+    width: 70vw;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 1rem 2rem;
+}
+
+form h2 {
+    text-shadow: var(--text-shadow-effect);
+}
+
+.form-elements {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    height: 70%;
+    gap: 0.4rem;
+}
+
+.form-elements #first-name {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.form-elements #last-name {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+}
+
+.form-elements #email {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.form-elements #phone {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+.form-elements #service {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+.form-elements #message {
+    grid-column: 1 / 3;
+    grid-row: 4 / 6;
+}
+
+
+.form-elements input,
+.form-elements select,
+.form-elements textarea {
+    padding-left: 0.4rem;
+    background-color: var(--secondary-color2);
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+    color: gray;
+    resize: none;
+}
+
+
+.form-elements button {
+    height: 6vh;
+    width: 40%;
+    background-color: var(--secondary-color);
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 500;
+    border-radius: 0.9rem;
+    box-shadow: 0px 0px 1px black;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-elements button:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* ---- copyright section CSS ---- */
+.copyright-container {
+    height: 40vh;
+    background-color: var(--secondary-color2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 0 !important;
+}
+
+.copyright-container h1>.dot {
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 4px var(--secondary-color);
+}
+
+.copyright-container img {
+    height: 1.4rem;
+    filter: drop-shadow(0 0 5px #16e495);
+}
+
+.copyright-images {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---- CSS for parallax effect ---- */
+.parallax-section {
+    background-image: linear-gradient(to right, #1c1c22, #0e2929);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ---- CSS for all heading animation ---- */
+h1,
+h2,
+.section-heading {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-heading h1,
+.skills-heading h1,
+.projects-heading h1,
+.contact-form h1 {
+    text-shadow: 0px 0px 5px var(--secondary-color);
+}
