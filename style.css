@@ -167,6 +167,10 @@ nav {
     filter: drop-shadow(0 0 5px #16e495);
 }
 
+.connect a img:hover{
+    transform: scale(1.1);
+}
+
 
 /* ---- About section CSS ---- */
 .about-heading h1 {
